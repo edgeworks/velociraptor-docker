@@ -47,13 +47,7 @@ echo "--- PWD: "$PWD
 echo "--- ls -la ----"
 ls -la
 echo "---"
-cp client.config.yaml client.config_PSZ.yaml
-cp client.config.yaml client.config_EZ.yaml
-sed -i 's/velociraptor.police.be.ch/velociraptor.psz.police.be.ch/g' client.config_PSZ.yaml
-sed -i 's/velociraptor.police.be.ch/velociraptor.ez.police.be.ch/g' client.config_EZ.yaml
-cp clients/windows/velociraptor_client_repacked.msi clients/windows/velociraptor_client_ULAN.msi
-./velociraptor config repack --msi clients/windows/velociraptor_client.msi client.config_PSZ.yaml clients/windows/velociraptor_client_PSZ.msi
-./velociraptor config repack --msi clients/windows/velociraptor_client.msi client.config_EZ.yaml clients/windows/velociraptor_client_EZ.msi
+
 
 # Start Velocoraptor
 ./velociraptor --config server.config.yaml frontend -v
